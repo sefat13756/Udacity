@@ -9,10 +9,17 @@ import android.widget.TextView;
 import android.util.ArrayMap;
 
 public class MainActivity extends ActionBarActivity {
+    
+    private TextView quantityTextView;
+    private TextView priceTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        quantityTextView = (TextView) findViewById(R.id.text2);
+        priceTextView = (TextView) findViewById(R.id.price_text_view);
+        
         setContentView(R.layout.activity_main);
     }
 
@@ -22,13 +29,10 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void display(int number) {
-        TextView quantityTextView = (TextView) findViewById(
-                R.id.text2);
         quantityTextView.setText("" + number);
     }
     private void displayNumber(int number){
-        TextView PriceTextView=(TextView) findViewById(R.id.price_text_view);
-        PriceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 }
 
